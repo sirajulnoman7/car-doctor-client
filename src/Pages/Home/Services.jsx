@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { FaArrowRightLong } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
     const [services, setServices] = useState([])
 
     useEffect(() => {
-        fetch('./servises.json')
+        fetch('http://localhost:5000/service')
             .then(res => res.json())
             .then(data => {
                 setServices(data)
@@ -32,10 +33,12 @@ const Services = () => {
                             <h2 className="card-title">{service.title}</h2>
                             <div className="card-actions justify-end items-center">
                                 <p className='text-red-500 font-bold '>Price : ${service.price}</p>
-                                <button className="btn btn-circle hover:bg-green-500 hover:text-white text-red-500 ">
+                               <Link to={`/services/${service._id}`}>
+                               <button className="btn btn-circle hover:bg-yellow-700 hover:text-white text-red-500 ">
                                 <FaArrowRightLong className='text-xl'/>
 
                                 </button>
+                               </Link>
                             </div>
                         </div>
                     </div>

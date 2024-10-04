@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/icons/logo.svg'
 import { AuthContext } from '../../Providers/AuthProvides/AuthProviders';
 const Navbar = () => {
+  
     const {logOut,user}=useContext(AuthContext)
     const handleSignOut=()=>{
         logOut()
@@ -18,6 +19,12 @@ const Navbar = () => {
         <li className='font-semibold '><NavLink to={'/service'}>Service</NavLink></li>
         <li className='font-semibold '><NavLink to={'/blog'}>Blog</NavLink></li>
         <li className='font-semibold '><NavLink to={'/contact'}>Contact</NavLink></li>
+        <li className='font-semibold '><NavLink to={'/booking'}>Booking</NavLink></li>
+       { !user?.email && <>
+        <li className='font-semibold '><NavLink to={'/sign_in'}>Sign In</NavLink></li>
+        <li className='font-semibold '><NavLink to={'/sign_up'}>Sign Up</NavLink></li>
+       </>
+       }
     </>
     return (
         <div className="navbar h-[86px] mb-7">
