@@ -21,11 +21,11 @@ const Signin = () => {
                 alert('Login Successfully')
                 console.log(result.user)
 
-                const userEmail = { email }
-               axios.post('http://localhost:5000/jwt',userEmail,{withCredentials:true})
-               .then(res=>{
-                console.log(res.data)
-               })
+            //     const userEmail = { email }
+            //    axios.post('https://car-doctor-server-9an3kxpsn-sirajulnoman7s-projects.vercel.app/jwt',userEmail,{withCredentials:true})
+            //    .then(res=>{
+            //     console.log(res.data)
+            //    })
                 form.reset()
 
             })

@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import useAxiosBaseUrl from '../../Hooks/useAxiosBaseUrl';
 
 const Services = () => {
     const [services, setServices] = useState([])
+    //  use won hooks for axios url
+    const axiosSecure=useAxiosBaseUrl()
 
     useEffect(() => {
-        fetch('http://localhost:5000/service')
-            .then(res => res.json())
-            .then(data => {
-                setServices(data)
-            })
+        // fetch('https://car-doctor-server-9an3kxpsn-sirajulnoman7s-projects.vercel.app/service')
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setServices(data)
+        //     })
+     axiosSecure.get('/service')
+     .then(res=>setServices(res.data))
     }, [])
 
     return (

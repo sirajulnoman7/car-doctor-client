@@ -3,15 +3,17 @@ import { AuthContext } from '../../Providers/AuthProvides/AuthProviders';
 import BookingRow from './BookingRow';
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import useAxiosBaseUrl from '../../Hooks/useAxiosBaseUrl';
 
 const Booking = () => {
     const { user } = useContext(AuthContext)
     const [booking, setBooking] = useState([])
+    const axiosSecure=useAxiosBaseUrl()
     console.log(booking)
     console.log(user)
-    const url = `http://localhost:5000/booking?email=${user?.email}`
+    const url = `/booking?email=${user?.email}`
     useEffect(() => {
-        axios.get(url,{withCredentials:true})
+        axiosSecure.get(url)
         .then(res=>{
             setBooking(res.data)
         })
@@ -36,7 +38,7 @@ const Booking = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 // Only proceed with deletion if confirmed
-                fetch(`http://localhost:5000/booking/${id}`, {
+                fetch(`https://car-doctor-server-9an3kxpsn-sirajulnoman7s-projects.vercel.app/booking/${id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())
@@ -58,7 +60,7 @@ const Booking = () => {
     };
 
     const updateBooking=(id)=>{
-        fetch(`http://localhost:5000/booking/${id}`, {
+        fetch(`https://car-doctor-server-9an3kxpsn-sirajulnoman7s-projects.vercel.app/booking/${id}`, {
             method: 'PUT',
             headers:{
                 "Content-Type":"application/json"

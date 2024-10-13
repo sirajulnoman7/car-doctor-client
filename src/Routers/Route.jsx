@@ -30,7 +30,7 @@ import PrivateRoute from './PrivateRoute';
             {
                 path:'/services/:id',
                 element:<PrivateRoute><Checkout></Checkout></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/service/${params.id}`)
+                loader:({params})=>fetch(`https://car-doctor-server-9an3kxpsn-sirajulnoman7s-projects.vercel.app/service/${params.id}`)
             },
             {
                 path:'/booking',
