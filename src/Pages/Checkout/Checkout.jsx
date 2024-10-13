@@ -15,7 +15,7 @@ const Checkout = () => {
           const area=e.target.area.value;
           console.log(name,email,price,date,area)
         const dataInfo={name,email,price,date,area,img,title}
-        fetch('https://car-doctor-server-9an3kxpsn-sirajulnoman7s-projects.vercel.app/booking',{
+        fetch('https://car-doctor-server-gamma-drab.vercel.app/booking',{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

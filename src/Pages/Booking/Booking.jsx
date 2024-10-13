@@ -38,7 +38,7 @@ const Booking = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 // Only proceed with deletion if confirmed
-                fetch(`https://car-doctor-server-9an3kxpsn-sirajulnoman7s-projects.vercel.app/booking/${id}`, {
+                fetch(`https://car-doctor-server-gamma-drab.vercel.app/booking/${id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())
@@ -60,7 +60,7 @@ const Booking = () => {
     };
 
     const updateBooking=(id)=>{
-        fetch(`https://car-doctor-server-9an3kxpsn-sirajulnoman7s-projects.vercel.app/booking/${id}`, {
+        fetch(`https://car-doctor-server-gamma-drab.vercel.app/booking/${id}`, {
             method: 'PUT',
             headers:{
                 "Content-Type":"application/json"

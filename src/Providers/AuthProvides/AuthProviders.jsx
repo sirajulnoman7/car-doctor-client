@@ -41,7 +41,7 @@ const AuthProviders = ({ children }) => {
             setUser(currentUser)
             if (currentUser) {
 
-                axios.post('https://car-doctor-server-9an3kxpsn-sirajulnoman7s-projects.vercel.app/jwt', logUser, { withCredentials: true })
+                axios.post('https://car-doctor-server-gamma-drab.vercel.app/jwt', logUser, { withCredentials: true })
                     .then(res => {
                         console.log(res.data)
                     })
@@ -49,7 +49,7 @@ const AuthProviders = ({ children }) => {
 
             else {
                 
-                axios.post('https://car-doctor-server-9an3kxpsn-sirajulnoman7s-projects.vercel.app/logout', logUser, { withCredentials: true })
+                axios.post('https://car-doctor-server-gamma-drab.vercel.app/logout', logUser, { withCredentials: true })
                     .then(res => {
                         console.log(res.data)
                     })

@@ -9,7 +9,7 @@ const Services = () => {
     const axiosSecure=useAxiosBaseUrl()
 
     useEffect(() => {
-        // fetch('https://car-doctor-server-9an3kxpsn-sirajulnoman7s-projects.vercel.app/service')
+        // fetch('https://car-doctor-server-gamma-drab.vercel.app/service')
         //     .then(res => res.json())
         //     .then(data => {
         //         setServices(data)
